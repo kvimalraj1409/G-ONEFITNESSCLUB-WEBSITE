@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>G-ONE FITNESS CLUB | Transform Your Body. Transform Your Life.</title>
+<link rel="icon" type="image/png" href="assets/logo.png">
 <meta name="description" content="G-ONE FITNESS CLUB - One Goal. One Strength. G-ONE. Professional trainers, modern equipment, flexible timings.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,8 +70,10 @@
     display:flex; align-items:center; justify-content:space-between;
     padding:16px 24px; max-width:1180px; margin:0 auto;
   }
-  .logo{font-size:22px; font-weight:900; letter-spacing:1px;}
+  .logo{font-size:22px; font-weight:900; letter-spacing:1px; display:flex; align-items:center; gap:10px;}
   .logo span{color:var(--accent);}
+  .logo img{height:44px; width:auto; display:block;}
+  .footer-brand .logo img{height:52px;}
   .nav-links{display:flex; align-items:center; gap:34px;}
   .nav-links a{
     font-weight:500; font-size:15px; color:var(--white); position:relative; padding:4px 0;
@@ -279,7 +282,7 @@
 <!-- ===== HEADER ===== -->
 <header>
   <nav>
-    <a href="#home" class="logo">G<span>-ONE</span> FITNESS</a>
+    <a href="#home" class="logo"><img src="assets/logo.png" alt="G-ONE Fitness Club Logo"></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
@@ -471,6 +474,13 @@
       <div class="contact-info-card">
         <h3>G-ONE FITNESS CLUB</h3>
         <div class="contact-row">
+          <div class="contact-icon">👤</div>
+          <div>
+            <div class="label">Proprietor</div>
+            <div class="value">Guna Sekaran</div>
+          </div>
+        </div>
+        <div class="contact-row">
           <div class="contact-icon">📍</div>
           <div>
             <div class="label">Address</div>
@@ -485,6 +495,13 @@
           </div>
         </div>
         <div class="contact-row">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="label">Phone (Proprietor)</div>
+            <a class="value" href="tel:+918883596666">88835 9666</a>
+          </div>
+        </div>
+        <div class="contact-row">
           <div class="contact-icon">💬</div>
           <div>
             <div class="label">WhatsApp</div>
@@ -495,7 +512,7 @@
           <div class="contact-icon">✉️</div>
           <div>
             <div class="label">Email</div>
-            <a class="value" href="mailto:g.one.fitnessclub.gobi@gmail.com">g.one.fitnessclub.gobi@gmail.com</a>
+            <a class="value" href="mailto:g.one.fitness.gobi@gmail.com">g.one.fitness.gobi@gmail.com</a>
           </div>
         </div>
       </div>
@@ -541,7 +558,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo">G<span>-ONE</span> FITNESS</div>
+        <div class="logo"><img src="assets/logo.png" alt="G-ONE Fitness Club Logo"></div>
         <p>One Goal. One Strength. G-ONE. Your transformation starts here.</p>
       </div>
       <div class="footer-col">
@@ -554,8 +571,9 @@
       <div class="footer-col">
         <h4>Contact</h4>
         <a href="tel:+918681055666">📞 86810 55666</a>
+        <a href="tel:+918883596666">📞 88835 9666</a>
         <a href="https://wa.me/918681055666" target="_blank" rel="noopener">💬 WhatsApp</a>
-        <a href="mailto:gonefitnessgobi@gmail.com">✉️ gonefitnessgobi@gmail.com</a>
+        <a href="mailto:g.one.fitness.gobi@gmail.com">✉️ g.one.fitness.gobi@gmail.com</a>
       </div>
       <div class="footer-col">
         <h4>Follow Us</h4>
