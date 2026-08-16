@@ -71,9 +71,11 @@
     padding:16px 24px; max-width:1180px; margin:0 auto;
   }
   .logo{font-size:22px; font-weight:900; letter-spacing:1px; display:flex; align-items:center; gap:10px;}
-  .logo span{color:var(--accent);}
+  .logo > span{color:var(--white);}
+  .logo > span span{color:var(--accent);}
   .logo img{height:44px; width:auto; display:block;}
   .footer-brand .logo img{height:52px;}
+  @media(max-width:480px){.logo-text{display:none;}}
   .nav-links{display:flex; align-items:center; gap:34px;}
   .nav-links a{
     font-weight:500; font-size:15px; color:var(--white); position:relative; padding:4px 0;
@@ -117,6 +119,10 @@
       center/cover no-repeat fixed;
   }
   .hero-content{max-width:680px;}
+  .hero-brand{
+    display:block; font-size:clamp(15px,2vw,18px); font-weight:800; letter-spacing:3px;
+    text-transform:uppercase; color:var(--white); margin-bottom:14px;
+  }
   .hero-eyebrow{
     display:inline-block; color:var(--accent); font-weight:600; letter-spacing:2px;
     text-transform:uppercase; font-size:13px; border:1px solid var(--accent);
@@ -282,7 +288,7 @@
 <!-- ===== HEADER ===== -->
 <header>
   <nav>
-    <a href="#home" class="logo"><img src="assets/logo.png" alt="G-ONE Fitness Club Logo"></a>
+    <a href="#home" class="logo"><img src="assets/logo.png" alt="G-ONE Fitness Club Logo"><span class="logo-text">G<span>-ONE</span> FITNESS CLUB</span></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
@@ -303,6 +309,7 @@
 <!-- ===== HERO ===== -->
 <section class="hero" id="home">
   <div class="container hero-content">
+    <span class="hero-brand">G-ONE FITNESS CLUB</span>
     <span class="hero-eyebrow">One Goal. One Strength. G-ONE.</span>
     <h1>Transform Your Body.<br>Transform Your <span class="accent-text">Life.</span></h1>
     <p>Join G-ONE FITNESS CLUB and train with professional coaches, modern equipment, and a community that pushes you to become the strongest version of yourself.</p>
