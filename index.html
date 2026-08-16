@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G-ONE FITNESS CLUB | Transform Your Body. Transform Your Life.</title>
+<meta name="description" content="G-ONE FITNESS CLUB - One Goal. One Strength. G-ONE. Professional trainers, modern equipment, flexible timings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0a0a0a;
+    --bg-alt: #141414;
+    --bg-card: #1a1a1a;
+    --white: #ffffff;
+    --text-muted: #b3b3b3;
+    --accent: #ff4d4d;
+    --accent-dark: #d93636;
+    --border: #2a2a2a;
+    --radius: 10px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--white);
+    font-family:'Poppins', sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  a{text-decoration:none; color:inherit;}
+  ul{list-style:none;}
+  .container{max-width:1180px; margin:0 auto; padding:0 24px;}
+  section{padding:90px 0;}
+  .section-tag{
+    color:var(--accent); font-weight:600; font-size:14px; letter-spacing:2px;
+    text-transform:uppercase; display:block; margin-bottom:12px;
+  }
+  .section-title{
+    font-size:clamp(28px,4vw,42px); font-weight:800; margin-bottom:16px; line-height:1.2;
+  }
+  .section-desc{color:var(--text-muted); font-size:16px; max-width:600px; margin-bottom:50px;}
+  .center{text-align:center; margin-left:auto; margin-right:auto;}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:14px 30px; border-radius:50px; font-weight:600; font-size:15px;
+    border:2px solid transparent; cursor:pointer; transition:all .2s ease; white-space:nowrap;
+  }
+  .btn-accent{background:var(--accent); color:var(--white);}
+  .btn-accent:hover{background:var(--accent-dark); transform:translateY(-2px);}
+  .btn-outline{background:transparent; color:var(--white); border-color:var(--white);}
+  .btn-outline:hover{background:var(--white); color:var(--bg);}
+  .btn-whatsapp{background:#25D366; color:#fff;}
+  .btn-whatsapp:hover{background:#1ebe57; transform:translateY(-2px);}
+  .btn-block{width:100%;}
+
+  /* ===== HEADER ===== */
+  header{
+    position:fixed; top:0; left:0; width:100%; z-index:1000;
+    background:rgba(10,10,10,0.85); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+    transition:background .3s;
+  }
+  nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px; max-width:1180px; margin:0 auto;
+  }
+  .logo{font-size:22px; font-weight:900; letter-spacing:1px;}
+  .logo span{color:var(--accent);}
+  .nav-links{display:flex; align-items:center; gap:34px;}
+  .nav-links a{
+    font-weight:500; font-size:15px; color:var(--white); position:relative; padding:4px 0;
+  }
+  .nav-links a::after{
+    content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--accent);
+    transition:width .25s;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-actions{display:flex; align-items:center; gap:16px;}
+  .hamburger{
+    display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px;
+  }
+  .hamburger span{width:26px; height:2px; background:var(--white); border-radius:2px; transition:all .25s;}
+  .hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger.active span:nth-child(2){opacity:0;}
+  .hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  @media(max-width:900px){
+    .nav-links{
+      position:fixed; top:64px; left:0; width:100%; height:0; overflow:hidden;
+      background:var(--bg-alt); flex-direction:column; gap:0;
+      transition:height .3s ease; border-bottom:1px solid var(--border);
+    }
+    .nav-links.open{height:calc(100vh - 64px); overflow-y:auto;}
+    .nav-links a{width:100%; padding:18px 24px; border-bottom:1px solid var(--border);}
+    .nav-links a::after{display:none;}
+    .nav-actions .btn-accent{display:none;}
+    .nav-links.open .join-mobile{display:block; padding:22px 24px;}
+    .hamburger{display:flex;}
+  }
+  .join-mobile{display:none;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative; min-height:100vh; display:flex; align-items:center;
+    padding-top:64px;
+    background:
+      linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.85) 75%, var(--bg) 100%),
+      url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1600&auto=format&fit=crop')
+      center/cover no-repeat fixed;
+  }
+  .hero-content{max-width:680px;}
+  .hero-eyebrow{
+    display:inline-block; color:var(--accent); font-weight:600; letter-spacing:2px;
+    text-transform:uppercase; font-size:13px; border:1px solid var(--accent);
+    padding:6px 16px; border-radius:50px; margin-bottom:24px;
+  }
+  .hero h1{
+    font-size:clamp(38px,6vw,64px); font-weight:900; line-height:1.08; margin-bottom:22px;
+  }
+  .hero h1 .accent-text{color:var(--accent);}
+  .hero p{font-size:17px; color:var(--text-muted); margin-bottom:36px; max-width:520px;}
+  .hero-ctas{display:flex; flex-wrap:wrap; gap:16px;}
+
+  /* ===== ABOUT ===== */
+  .about-grid{display:grid; grid-template-columns:1fr; gap:50px; align-items:center;}
+  @media(min-width:860px){.about-grid{grid-template-columns:1fr 1fr;}}
+  .about-img{
+    border-radius:var(--radius); overflow:hidden; aspect-ratio:4/3;
+    border:1px solid var(--border);
+  }
+  .about-img img{width:100%; height:100%; object-fit:cover;}
+  .about-points{display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-top:30px;}
+  .about-point{
+    background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius);
+    padding:18px; font-size:14.5px; font-weight:500; display:flex; align-items:center; gap:10px;
+  }
+  .about-point .dot{width:8px; height:8px; border-radius:50%; background:var(--accent); flex-shrink:0;}
+
+  /* ===== SERVICES ===== */
+  .services-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px;}
+  .service-card{
+    background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius);
+    padding:36px 28px; transition:transform .2s, border-color .2s;
+  }
+  .service-card:hover{transform:translateY(-6px); border-color:var(--accent);}
+  .service-icon{
+    width:56px; height:56px; border-radius:14px; background:rgba(255,77,77,0.12);
+    display:flex; align-items:center; justify-content:center; margin-bottom:22px; font-size:26px;
+  }
+  .service-card h3{font-size:19px; font-weight:700; margin-bottom:10px;}
+  .service-card p{color:var(--text-muted); font-size:14.5px;}
+
+  /* ===== MEMBERSHIP ===== */
+  .plans-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:24px;}
+  .plan-card{
+    background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius);
+    padding:36px 30px; display:flex; flex-direction:column; position:relative;
+  }
+  .plan-card.popular{border:2px solid var(--accent); transform:scale(1.03);}
+  .plan-badge{
+    position:absolute; top:-14px; left:50%; transform:translateX(-50%);
+    background:var(--accent); color:#fff; font-size:12px; font-weight:700;
+    padding:6px 16px; border-radius:50px; letter-spacing:0.5px; white-space:nowrap;
+  }
+  .plan-card h3{font-size:20px; font-weight:700; margin-bottom:8px;}
+  .plan-duration{color:var(--text-muted); font-size:14px; margin-bottom:24px;}
+  .plan-price{font-size:34px; font-weight:800; margin-bottom:24px;}
+  .plan-price span{font-size:14px; color:var(--text-muted); font-weight:400;}
+  .plan-card ul{margin-bottom:30px; flex-grow:1;}
+  .plan-card li{
+    font-size:14px; color:var(--text-muted); padding:9px 0; border-top:1px solid var(--border);
+    display:flex; align-items:center; gap:8px;
+  }
+  .plan-card li:first-child{border-top:none;}
+  .plan-card li::before{content:'✓'; color:var(--accent); font-weight:700;}
+
+  /* ===== WHY CHOOSE US ===== */
+  .why-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:24px;}
+  .why-card{text-align:center; padding:30px 20px;}
+  .why-icon{
+    width:64px; height:64px; border-radius:50%; background:var(--bg-card); border:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center; margin:0 auto 18px; font-size:28px;
+  }
+  .why-card h4{font-size:16.5px; font-weight:600; margin-bottom:6px;}
+  .why-card p{color:var(--text-muted); font-size:13.5px;}
+
+  /* ===== HOURS ===== */
+  .hours-section{
+    background:linear-gradient(120deg, var(--accent-dark), var(--accent));
+    border-radius:var(--radius); padding:56px 40px; text-align:center;
+  }
+  .hours-section h2{font-size:clamp(24px,3.4vw,32px); font-weight:800; margin-bottom:10px;}
+  .hours-section .days{font-size:16px; font-weight:500; opacity:0.95; margin-bottom:6px;}
+  .hours-section .time{font-size:clamp(26px,4vw,38px); font-weight:900; letter-spacing:1px;}
+
+  /* ===== CONTACT ===== */
+  .contact-grid{display:grid; grid-template-columns:1fr; gap:50px;}
+  @media(min-width:900px){.contact-grid{grid-template-columns:0.9fr 1.1fr;}}
+  .contact-info-card{
+    background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:36px;
+  }
+  .contact-info-card h3{font-size:20px; font-weight:700; margin-bottom:24px;}
+  .contact-row{display:flex; gap:16px; align-items:flex-start; margin-bottom:22px;}
+  .contact-row:last-child{margin-bottom:0;}
+  .contact-icon{
+    width:40px; height:40px; border-radius:10px; background:rgba(255,77,77,0.12);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:18px;
+  }
+  .contact-row .label{font-size:12.5px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:2px;}
+  .contact-row .value{font-size:15px; font-weight:500;}
+  .contact-row a.value:hover{color:var(--accent);}
+
+  .form-card{
+    background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:36px;
+  }
+  .form-group{margin-bottom:20px;}
+  .form-group label{
+    display:block; font-size:13.5px; font-weight:500; margin-bottom:8px; color:var(--text-muted);
+  }
+  .form-group .req{color:var(--accent);}
+  .form-control{
+    width:100%; background:var(--bg); border:1px solid var(--border); border-radius:8px;
+    padding:13px 16px; color:var(--white); font-family:'Poppins', sans-serif; font-size:14.5px;
+    transition:border-color .2s;
+  }
+  .form-control:focus{outline:none; border-color:var(--accent);}
+  textarea.form-control{resize:vertical; min-height:100px;}
+  .form-error{color:var(--accent); font-size:12.5px; margin-top:6px; display:none;}
+  .form-status{
+    margin-top:18px; padding:14px 16px; border-radius:8px; font-size:14px; display:none;
+  }
+  .form-status.success{display:block; background:rgba(37,211,102,0.12); color:#25D366; border:1px solid rgba(37,211,102,0.3);}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--bg-alt); border-top:1px solid var(--border); padding:56px 0 24px;}
+  .footer-grid{
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:40px; margin-bottom:40px;
+  }
+  .footer-brand .logo{margin-bottom:14px;}
+  .footer-brand p{color:var(--text-muted); font-size:14px; max-width:280px;}
+  .footer-col h4{font-size:15px; font-weight:600; margin-bottom:16px;}
+  .footer-col a{
+    display:block; color:var(--text-muted); font-size:14px; margin-bottom:12px; transition:color .2s;
+  }
+  .footer-col a:hover{color:var(--accent);}
+  .footer-social{display:flex; gap:12px;}
+  .footer-social a{
+    width:40px; height:40px; border-radius:50%; background:var(--bg-card); border:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center; font-size:16px; transition:all .2s;
+  }
+  .footer-social a:hover{background:var(--accent); border-color:var(--accent);}
+  .footer-bottom{
+    border-top:1px solid var(--border); padding-top:24px; text-align:center;
+    color:var(--text-muted); font-size:13px;
+  }
+
+  /* ===== FLOATING WHATSAPP ===== */
+  .float-whatsapp{
+    position:fixed; bottom:26px; right:26px; z-index:999;
+    width:60px; height:60px; border-radius:50%; background:#25D366;
+    display:flex; align-items:center; justify-content:center; font-size:30px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.4); transition:transform .2s; color:#fff;
+  }
+  .float-whatsapp:hover{transform:scale(1.08);}
+
+  @media(max-width:600px){
+    section{padding:64px 0;}
+    .hero{background-attachment:scroll;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <nav>
+    <a href="#home" class="logo">G<span>-ONE</span> FITNESS</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#membership">Membership</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li class="join-mobile"><a href="#membership" class="btn btn-accent btn-block">Join Now</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="#membership" class="btn btn-accent">Join Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="container hero-content">
+    <span class="hero-eyebrow">One Goal. One Strength. G-ONE.</span>
+    <h1>Transform Your Body.<br>Transform Your <span class="accent-text">Life.</span></h1>
+    <p>Join G-ONE FITNESS CLUB and train with professional coaches, modern equipment, and a community that pushes you to become the strongest version of yourself.</p>
+    <div class="hero-ctas">
+      <a href="#membership" class="btn btn-accent">Join Now</a>
+      <a href="https://wa.me/918681055666?text=Hi%20I%20would%20like%20to%20know%20about%20your%20gym%20membership" target="_blank" rel="noopener" class="btn btn-whatsapp">
+        Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <span class="section-tag">About Us</span>
+        <h2 class="section-title">Built for real results, not just workouts.</h2>
+        <p class="section-desc" style="margin-bottom:0;">G-ONE FITNESS CLUB is a modern gym dedicated to helping you build strength, confidence, and a healthier lifestyle. With professional trainers, top-quality equipment, and a clean, welcoming environment, we make sure every member — from beginner to advanced — gets the support they need to reach their goals.</p>
+        <div class="about-points">
+          <div class="about-point"><span class="dot"></span>Professional trainers</div>
+          <div class="about-point"><span class="dot"></span>Modern equipment</div>
+          <div class="about-point"><span class="dot"></span>Clean environment</div>
+          <div class="about-point"><span class="dot"></span>Supportive community</div>
+        </div>
+      </div>
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=1000&auto=format&fit=crop" alt="Inside G-ONE FITNESS CLUB">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" style="background:var(--bg-alt);">
+  <div class="container">
+    <span class="section-tag center">What We Offer</span>
+    <h2 class="section-title center">Our Services</h2>
+    <p class="section-desc center">Everything you need under one roof, guided by trainers who know how to get you there.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏋️</div>
+        <h3>Strength Training</h3>
+        <p>Build muscle and power with structured, progressive strength programs.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏃</div>
+        <h3>Cardio</h3>
+        <p>Boost endurance and burn fat with our dedicated cardio zone and equipment.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎯</div>
+        <h3>Personal Training</h3>
+        <p>One-on-one coaching tailored to your specific fitness goals and pace.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚡</div>
+        <h3>Functional Training</h3>
+        <p>Improve real-world strength, balance, and mobility with functional workouts.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">👥</div>
+        <h3>Group Classes</h3>
+        <p>Stay motivated and have fun training alongside others in a group setting.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🥗</div>
+        <h3>Nutrition Guidance</h3>
+        <p>Get simple, practical diet guidance to support your training and goals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MEMBERSHIP ===== -->
+<section id="membership">
+  <div class="container">
+    <span class="section-tag center">Membership</span>
+    <h2 class="section-title center">Choose Your Plan</h2>
+    <p class="section-desc center">Flexible plans for every commitment level. No hidden charges.</p>
+    <div class="plans-grid">
+      <div class="plan-card">
+        <h3>Monthly</h3>
+        <p class="plan-duration">1 Month</p>
+        <div class="plan-price">Contact for<span> pricing</span></div>
+        <ul>
+          <li>Full gym access</li>
+          <li>Standard equipment</li>
+          <li>Locker access</li>
+        </ul>
+        <a href="https://wa.me/918681055666?text=Hi%20I%20want%20to%20join%20the%20Monthly%20plan" target="_blank" rel="noopener" class="btn btn-outline btn-block">Join Now</a>
+      </div>
+      <div class="plan-card">
+        <h3>3 Months</h3>
+        <p class="plan-duration">Quarterly</p>
+        <div class="plan-price">Contact for<span> pricing</span></div>
+        <ul>
+          <li>Full gym access</li>
+          <li>Standard equipment</li>
+          <li>Locker access</li>
+        </ul>
+        <a href="https://wa.me/918681055666?text=Hi%20I%20want%20to%20join%20the%203%20Months%20plan" target="_blank" rel="noopener" class="btn btn-outline btn-block">Join Now</a>
+      </div>
+      <div class="plan-card popular">
+        <span class="plan-badge">Most Popular</span>
+        <h3>6 Months</h3>
+        <p class="plan-duration">Half-Yearly</p>
+        <div class="plan-price">Contact for<span> pricing</span></div>
+        <ul>
+          <li>Full gym access</li>
+          <li>Standard equipment</li>
+          <li>Locker access</li>
+          <li>1 free trainer session</li>
+        </ul>
+        <a href="https://wa.me/918681055666?text=Hi%20I%20want%20to%20join%20the%206%20Months%20plan" target="_blank" rel="noopener" class="btn btn-accent btn-block">Join Now</a>
+      </div>
+      <div class="plan-card">
+        <h3>Annual</h3>
+        <p class="plan-duration">12 Months</p>
+        <div class="plan-price">Contact for<span> pricing</span></div>
+        <ul>
+          <li>Full gym access</li>
+          <li>Standard equipment</li>
+          <li>Locker access</li>
+          <li>Priority booking</li>
+        </ul>
+        <a href="https://wa.me/918681055666?text=Hi%20I%20want%20to%20join%20the%20Annual%20plan" target="_blank" rel="noopener" class="btn btn-outline btn-block">Join Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY CHOOSE US ===== -->
+<section style="background:var(--bg-alt);">
+  <div class="container">
+    <span class="section-tag center">Why G-ONE</span>
+    <h2 class="section-title center">Why Choose Us</h2>
+    <p class="section-desc center">A gym that's serious about your progress, from your first day to your best day.</p>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon">🏋️‍♂️</div><h4>Modern Equipment</h4><p>Well-maintained, up-to-date machines</p></div>
+      <div class="why-card"><div class="why-icon">🎓</div><h4>Experienced Trainers</h4><p>Certified coaches who know their craft</p></div>
+      <div class="why-card"><div class="why-icon">⏰</div><h4>Flexible Timings</h4><p>Open early to late, every day</p></div>
+      <div class="why-card"><div class="why-icon">🌱</div><h4>Beginner Friendly</h4><p>Guided onboarding for first-timers</p></div>
+      <div class="why-card"><div class="why-icon">✨</div><h4>Clean Gym</h4><p>Hygienic, well-maintained facility</p></div>
+      <div class="why-card"><div class="why-icon">🤝</div><h4>Personal Training</h4><p>1-on-1 sessions available for all members</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OPENING HOURS ===== -->
+<section>
+  <div class="container">
+    <div class="hours-section">
+      <h2>Opening Hours</h2>
+      <p class="days">Monday – Sunday</p>
+      <p class="time">5:30 AM – 10:00 PM</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" style="background:var(--bg-alt);">
+  <div class="container">
+    <span class="section-tag">Get In Touch</span>
+    <h2 class="section-title">Contact Us</h2>
+    <p class="section-desc">Have a question, or ready to start? Reach out or send us your details below.</p>
+    <div class="contact-grid">
+      <div class="contact-info-card">
+        <h3>G-ONE FITNESS CLUB</h3>
+        <div class="contact-row">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="label">Address</div>
+            <div class="value">Block No 4, 1861/1 Erode Main Road, Parvathi Nagar, Gobi, Tamil Nadu - 638476</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="label">Phone</div>
+            <a class="value" href="tel:+918681055666">86810 55666</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">💬</div>
+          <div>
+            <div class="label">WhatsApp</div>
+            <a class="value" href="https://wa.me/918681055666?text=Hi%20I%20would%20like%20to%20know%20about%20your%20gym%20membership" target="_blank" rel="noopener">86810 55666</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="label">Email</div>
+            <a class="value" href="mailto:gonefitnessgobi@gmail.com">gonefitnessgobi@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <form id="enquiryForm" novalidate>
+          <div class="form-group">
+            <label for="name">Name <span class="req">*</span></label>
+            <input type="text" id="name" class="form-control" placeholder="Your full name">
+            <div class="form-error" id="nameError">Please enter your name.</div>
+          </div>
+          <div class="form-group">
+            <label for="mobile">Mobile Number <span class="req">*</span></label>
+            <input type="tel" id="mobile" class="form-control" placeholder="10-digit mobile number">
+            <div class="form-error" id="mobileError">Please enter a valid 10-digit mobile number.</div>
+          </div>
+          <div class="form-group">
+            <label for="goal">Fitness Goal <span class="req">*</span></label>
+            <select id="goal" class="form-control">
+              <option value="">Select your goal</option>
+              <option value="Weight Loss">Weight Loss</option>
+              <option value="Muscle Gain">Muscle Gain</option>
+              <option value="General Fitness">General Fitness</option>
+              <option value="Strength">Strength</option>
+              <option value="Personal Training">Personal Training</option>
+            </select>
+            <div class="form-error" id="goalError">Please select a fitness goal.</div>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" class="form-control" placeholder="Tell us anything else we should know"></textarea>
+          </div>
+          <button type="submit" class="btn btn-accent btn-block">Send Enquiry</button>
+          <div class="form-status" id="formStatus">Thanks! Your enquiry has been sent. We'll contact you shortly.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">G<span>-ONE</span> FITNESS</div>
+        <p>One Goal. One Strength. G-ONE. Your transformation starts here.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#membership">Membership</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:+918681055666">📞 86810 55666</a>
+        <a href="https://wa.me/918681055666" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <a href="mailto:gonefitnessgobi@gmail.com">✉️ gonefitnessgobi@gmail.com</a>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="footer-social">
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">📘</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> G-ONE FITNESS CLUB. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- ===== FLOATING WHATSAPP BUTTON ===== -->
+<a href="https://wa.me/8681055666?text=Hi%20I%20would%20like%20to%20know%20about%20your%20gym%20membership"
+   target="_blank" rel="noopener" class="float-whatsapp" aria-label="Chat on WhatsApp">💬</a>
+
+<script>
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('open');
+  });
+  // Close mobile menu when a link is clicked
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('open');
+    });
+  });
+
+  // Header background on scroll
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    header.style.background = window.scrollY > 40 ? 'rgba(10,10,10,0.97)' : 'rgba(10,10,10,0.85)';
+  });
+
+  // Smooth scroll for nav links (native scroll-behavior handles most, this ensures offset for fixed header)
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      const target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        const headerHeight = document.querySelector('header').offsetHeight;
+        const top = target.getBoundingClientRect().top + window.pageYOffset - headerHeight + 1;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Enquiry form validation
+  const form = document.getElementById('enquiryForm');
+  const formStatus = document.getElementById('formStatus');
+
+  function showError(fieldId, errorId, show) {
+    document.getElementById(errorId).style.display = show ? 'block' : 'none';
+    document.getElementById(fieldId).style.borderColor = show ? 'var(--accent)' : 'var(--border)';
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    let valid = true;
+
+    const name = document.getElementById('name').value.trim();
+    const mobile = document.getElementById('mobile').value.trim();
+    const goal = document.getElementById('goal').value;
+
+    if (name === '') {
+      showError('name', 'nameError', true);
+      valid = false;
+    } else {
+      showError('name', 'nameError', false);
+    }
+
+    const mobilePattern = /^[6-9]\d{9}$/;
+    if (!mobilePattern.test(mobile)) {
+      showError('mobile', 'mobileError', true);
+      valid = false;
+    } else {
+      showError('mobile', 'mobileError', false);
+    }
+
+    if (goal === '') {
+      showError('goal', 'goalError', true);
+      valid = false;
+    } else {
+      showError('goal', 'goalError', false);
+    }
+
+    if (!valid) {
+      formStatus.classList.remove('success');
+      formStatus.style.display = 'none';
+      return;
+    }
+
+    // No backend connected — show confirmation only.
+    formStatus.classList.add('success');
+    formStatus.style.display = 'block';
+    form.reset();
+  });
+</script>
+
+</body>
+</html>
